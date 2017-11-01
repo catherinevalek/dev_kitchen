@@ -1,0 +1,39 @@
+<div class="#">
+  <h3>Welcome to dev kitchen!</h3>
+  <p>Register below:</p>
+
+  <div class="#">
+    <%= form_with model: User.new do |f| %>
+
+      <% if @user.errors.any? %>
+        <div class="#">
+          <h4>
+            <%=pluralize(@user.errors.count, "error") %> prohibited you from signing up:
+          </h4>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg  %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    <div class="#">
+      Username: <%= f.text_field :username  %>
+    </div>
+
+    <div class="#">
+      Email: <%= f.text_field :email  %>
+    </div>
+
+    <div class="#">
+      Password: <%= f.password_field :password %>
+    </div>
+
+    <div class="#">
+      <%= f.submit "Boom!" %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
