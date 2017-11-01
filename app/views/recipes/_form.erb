@@ -2,7 +2,11 @@
   <!-- <#%= render 'shared/error_messages' %> -->
   <div>
     <%= f.label :category %>
-    <%= f.select :category, @category_names, :prompt => 'Select One' %>
+    <!-- <#%= f.select :category, @category_names, :prompt => 'Select One' %> -->
+    <!-- <#%= f.collection_select(:recipe, :category_id, Category.all, -->
+                  <!-- :id, -->
+                 <!-- {:prompt => 'Please select the author of this post'}) %> -->
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>
   <div>
     <%= f.label :name, "Name" %>
@@ -14,7 +18,7 @@
   </div>
   <div>
     <%= f.label :prep_time, "Prep time" %>
-    <%= f.number_field :prep_time, max: 300 %>
+    <%= f.number_field :prep_time, max: 30 %>
   </div>
   <div>
     <%= f.label :ingredients, "Ingredients" %>
