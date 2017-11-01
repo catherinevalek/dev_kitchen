@@ -1,0 +1,30 @@
+<%= form_for @recipe do |f| %>
+  <!-- <#%= render 'shared/error_messages' %> -->
+  <div>
+    <%= f.label :category %>
+    <%= f.select :category, @category_names, :prompt => 'Select One' %>
+  </div>
+  <div>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :difficulty, "Difficulty" %>
+    <%= f.number_field :difficulty, max: 5 %>
+  </div>
+  <div>
+    <%= f.label :prep_time, "Prep time" %>
+    <%= f.number_field :prep_time, max: 300 %>
+  </div>
+  <div>
+    <%= f.label :ingredients, "Ingredients" %>
+    <%= f.text_area :ingredients %>
+  </div>
+  <div>
+    <%= f.label :directions, "Directions" %>
+    <%= f.text_area :directions %>
+  </div>
+  <div>
+    <%= f.submit yield(:button_text) %>
+  </div>
+<% end %>
