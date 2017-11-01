@@ -3,7 +3,7 @@
   <p>Register below:</p>
 
   <div class="#">
-    <%= form_with model: User.new do |f| %>
+    <%= form_for @user, url: {action:"create"} do |f| %>
 
       <% if @user.errors.any? %>
         <div class="#">
