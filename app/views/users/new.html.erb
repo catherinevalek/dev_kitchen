@@ -19,15 +19,19 @@
       <% end %>
 
     <div class="#">
-      Username: <%= f.text_field :username  %>
+      <%= f.label :username %>
+      <%= f.text_field :username  %>
     </div>
 
     <div class="#">
-      Email: <%= f.text_field :email  %>
+      <%= f.label :email %>
+      <%= f.text_field :email  %>
     </div>
 
     <div class="#">
-      Password: <%= f.password_field :password %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
     </div>
 
     <div class="#">
