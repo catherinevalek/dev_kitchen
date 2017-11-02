@@ -1,9 +1,9 @@
 <div class="category-container container">
-    
+
     <h1><%= "Choose a " + @category.name %></h1>
      <ul>
         <% @recipes.each do |recipe| %>
-            <li><%= recipe.name %></li>
+          <li><%= link_to recipe.name, recipe_path %></li>
         <% end %>
     <ul>
     <%= link_to 'Back', categories_path %>
