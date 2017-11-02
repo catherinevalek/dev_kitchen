@@ -1,0 +1,11 @@
+<% provide(:button_text, 'Update') %>
+<h1>Edit recipe</h1>
+
+<%= render "form" %>
+
+<!-- <#% if @recipe.user == current_user %> -->
+  <p>Delete this recipe? <%= link_to "Delete", @recipe, method: :delete,
+                                data: { confirm: "Are you sure?" } %></p>
+
+<!-- <#% end %> -->
+  <p><%= link_to "Back to recipe", @recipe %></p>
