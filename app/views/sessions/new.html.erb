@@ -1,0 +1,22 @@
+<div class="#">
+  <h3>Welcome to dev kitchen!</h3>
+  <p>Login below:</p>
+
+  <div class="#">
+    <%= form_with url: sessions_path, local: true do |f| %>
+
+    <div class="#">
+      Email: <%= f.text_field :email  %>
+    </div>
+
+    <div class="#">
+      Password: <%= f.password_field :password %>
+    </div>
+
+    <div class="#">
+      <%= f.submit "Log in!" %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
