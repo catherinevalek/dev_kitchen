@@ -1,0 +1,12 @@
+.category-container {
+    margin: 0 20px;
+    ul {
+        list-style-type: none;
+    }
+}
+
+.abs-center-x {
+    position: absolute;
+    left: 70%;
+    transform: translateX(-50%);
+}
