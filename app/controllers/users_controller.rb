@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to @user #, ADD FLASH NOTICE "You're Signed Up!"
     else
       render 'new'
     end
