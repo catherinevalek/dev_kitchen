@@ -14,11 +14,11 @@
   </div>
   <div>
     <%= f.label :difficulty, "Difficulty" %>
-    <%= f.number_field :difficulty, max: 5 %>
+    <%= f.number_field :difficulty, min: 0, max: 5 %>
   </div>
   <div>
     <%= f.label :prep_time, "Prep time" %>
-    <%= f.number_field :prep_time, max: 30 %>
+    <%= f.number_field :prep_time, min: 0, max: 300 %>
   </div>
   <div>
     <%= f.label :ingredients, "Ingredients" %>

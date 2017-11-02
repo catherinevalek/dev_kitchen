@@ -4,6 +4,10 @@
   <h2>Submitted by: <%= @recipe.user.username %></h2>
   <p>Difficulty level: <%= @recipe.difficulty %></p>
   <p>Prep time: <%= @recipe.prep_time %></p>
-  <p>Ingredients: <%= @recipe.ingredients %></p>
+  <p>Ingredients: <% @recipe.parse_ingredients.each do |ingredient| %></p>
+                    <%= ingredient %>
+                  <% end %>
   <p>Directions: <%= @recipe.directions %></p>
+  <p><%= link_to "Edit this recipe", edit_recipe_path(@recipe.id) %></p>
+  <p><%= link_to "All recipes", recipes_path %></p>
 </div>
