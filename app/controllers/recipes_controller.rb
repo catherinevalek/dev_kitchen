@@ -1,6 +1,15 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+   # binding.pry
+    if params[:search]
+
+      @recipes = Recipe.search(params[:search]).order("created_at DESC")
+    else
+      @recipes = Recipe.all.order("created_at DESC")
+      # flash[:error] = "Couldn't find a recipe!"
+      # redirect_to recipes_url
+    end
   end
 
   def new

@@ -7,4 +7,7 @@ class Recipe < ApplicationRecord
     ingredients.split(',')
   end
 
+  def self.search(search)
+    where("name ILIKE ? OR ingredients ILIKE ? OR directions ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

@@ -11,7 +11,7 @@
   <body>
     <nav class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-primary">
         <div class="d-flex">
-            <a class="navbar-brand" href="#">DEV KITCHEN</a>
+            <a class="navbar-brand" <%= link_to "DEV KITCHEN", categories_path %></a>
         </div>
         <button class="navbar-toggler order-3" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -25,12 +25,16 @@
                     <a class="nav-link" href="//codeply.com">Share</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Search</a>
+                    <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+                                          <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
+                                          <%= submit_tag "Search", :name => nil %>
+                                        <% end %>
                 </li>
             </ul>
         </div>
         <a class="navbar-text small text-truncate mt-1" href="#">Log In</a>
     </nav>
+
     <% flash.each do |message_type, message| %>
       <div><%= message %></div>
     <% end %>
