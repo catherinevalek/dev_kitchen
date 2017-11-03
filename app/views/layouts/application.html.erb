@@ -12,19 +12,20 @@
 
   </head>
 
-  <body>
 
 
-<header>
+
+  <header>
 
     <!--Main Navigation-->
     <%= render "layouts/header" %>
-
+  </header>
     <!--Intro Section-->
-    <%= render "layouts/registration" %>
+    <body>
+    <%= render "layouts/section" %>
 
 
-</header>
+
 
     <% flash.each do |message_type, message| %>
       <div><%= message %></div>

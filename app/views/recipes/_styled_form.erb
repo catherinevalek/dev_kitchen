@@ -1,5 +1,17 @@
 <%= form_for @recipe do |f| %>
   <!-- <#%= render 'shared/error_messages' %> -->
+    <% if @recipe.errors.any? %>
+      <div class="#">
+        <h4>
+          <%=pluralize(@recipe.errors.count, "error") %> prohibited you from submitting:
+        </h4>
+        <ul>
+          <% @recipe.errors.full_messages.each do |msg| %>
+            <li><%= msg  %></li>
+          <% end %>
+        </ul>
+      </div>
+   <% end %>
   <div class="md-form">
     <%= f.label :category %>
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>

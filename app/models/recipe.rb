@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   belongs_to :category
   belongs_to :user
 
-
+  validates :name, :difficulty, :prep_time, :ingredients, :directions, presence: true
   def parse_ingredients
     ingredients.split(',')
   end
