@@ -1,11 +1,15 @@
-<% provide(:button_text, 'Update') %>
-<h1>Edit recipe</h1>
-
-<%= render "form" %>
-
-<!-- <#% if @recipe.user == current_user %> -->
-  <p>Delete this recipe? <%= link_to "Delete", @recipe, method: :delete,
+<% content_for :right_side do %>
+<div class="card wow fadeInRight" data-wow-delay="0.3s">
+    <div class="card-body">
+        <!--Header-->
+        <div class="text-center">
+            <h3 class="white-text"><i class="fa fa-user white-text"></i> Edit this recipe:</h3>
+            <hr>
+        </div>
+        <% provide(:button_text, 'Update') %>
+        <%= render "styled_form" %>
+        <p>Delete this recipe? <%= link_to "Delete", @recipe, method: :delete,
                                 data: { confirm: "Are you sure?" } %></p>
-
-<!-- <#% end %> -->
-  <p><%= link_to "Back to recipe", @recipe %></p>
+      </div>
+  </div>
+<% end %>

@@ -1,23 +1,38 @@
-<div class="#">
-  <h3>Welcome to dev kitchen!</h3>
-  <p>Login below:</p>
 
-  <div class="#">
-    <%= form_with url: sessions_path, local: true do |f| %>
+<% content_for :right_side do %>
+<div class="card wow fadeInRight" data-wow-delay="0.3s">
+    <div class="card-body">
+        <!--Header-->
+        <div class="text-center">
+            <h3 class="white-text"><i class="fa fa-user white-text"></i> Login:</h3>
+            <hr>
+        </div>
 
-    <div class="#">
-      Email: <%= f.text_field :email  %>
-    </div>
+        <%= form_with url: sessions_path, local: true do |f| %>
 
-    <div class="#">
-      Password: <%= f.password_field :password %>
-    </div>
+        <div class="md-form">
+            <%= f.text_field :email, :id => "form2", :class => "form-control" %>
+            <%= f.label :email, "Your email", :class => "active" %>
+        </div>
 
-    <div class="#">
-      <%= f.submit "Log in!" %>
-    </div>
+        <div class="md-form">
+            <%= f.password_field :password, :id => "form2", :class => "form-control" %>
+            <%= f.label :password, "Your password", :class => "active" %>
+        </div>
 
-    <% end %>
-    <p><%= link_to "Create an account", new_user_path %></p>
+        <div class="text-center">
+          <%= f.submit "Boom!", :class =>"btn btn-indigo" %>
+            <!-- <button class="btn btn-indigo">Sign up</button> -->
+             <hr class="hr-light mb-3 mt-4">
+
+                <div class="inline-ul text-center d-flex justify-content-center">
+                    <a class="icons-sm tw-ic"><i class="fa fa-twitter white-text"></i></a>
+                    <a class="icons-sm li-ic"><i class="fa fa-linkedin white-text"> </i></a>
+                    <a class="icons-sm ins-ic"><i class="fa fa-instagram white-text"> </i></a>
+                </div>
+        </div>
+        <p><%= link_to "Create an account", new_user_path %></p>
+      <% end %>
+      </div>
   </div>
-</div>
+<% end %>
