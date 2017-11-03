@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :recipes
 
   validates_confirmation_of :password
-  validates :username, :email, :pw_hash, presence: true
+  validates :username, :email, presence: true
   validates :email, :username, uniqueness: true
   validate :validate_password
 
