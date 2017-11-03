@@ -1,28 +1,28 @@
-<%= form_with model: @menu url: menus_path, local: true do |f| %>
+<%= form_for @menu, url: { action: "create" } do |f| %>
 
   <div>
     <%= f.label :appetizer, "Appetizer" %>
-    <%= f.collection_select :recipe_id, Recipe.is_appetizer.order(:name), :id, :name, include_blank: true %>
+    <%= f.collection_select(:appetizer, Menu.appetizers, :id, :name, include_blank: true) %>
   </div>
 
   <div>
     <%= f.label :salad, "Salad" %>
-    <%= f.collection_select :recipe_id, Recipe.is_salad.order(:name), :id, :name, include_blank: true %>
+    <%= f.collection_select(:salad, Menu.salads, :id, :name, include_blank: true) %>
   </div>
 
   <div>
     <%= f.label :main_course, "Main Course" %>
-    <%= f.collection_select :recipe_id, Recipe.is_main_course.order(:name), :id, :name, include_blank: true %>
+    <%= f.collection_select(:main_course, Menu.main_courses, :id, :name, include_blank: true) %>
   </div>
 
   <div>
     <%= f.label :dessert, "Dessert" %>
-    <%= f.collection_select :recipe_id, Recipe.is_dessert.order(:name), :id, :name, include_blank: true %>
+    <%= f.collection_select(:dessert, Menu.desserts, :id, :name, include_blank: true) %>
   </div>
 
   <div>
     <%= f.label :date, "Date" %>
-    <%= f.date_select  %>
+    <%= date_select @menu, :date %>
   </div>
 
   <div>
