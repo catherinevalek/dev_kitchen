@@ -12,7 +12,7 @@
                         <%= link_to "Menu", categories_path, :class=>"nav-link" %>
                     </li>
                     <li class="nav-item">
-                        
+
                         <%= link_to "Share a recipe", new_recipe_path, :class=>"nav-link"%>
                     </li>
                     <% if logged_in? %>
@@ -30,10 +30,10 @@
                         <%= link_to "Log in", login_path, :class=>"nav-link"   %>
                       </li>
                         <% end %>
-                    
+
                 </ul>
                 <form class="form-inline">
-                    
+
                     <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
                       <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", :class=>"form-control mr-sm-2" %>
                     <% end %>

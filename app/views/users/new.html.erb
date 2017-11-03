@@ -1,6 +1,13 @@
-<div class="#">
-  <h3>Welcome to dev kitchen!</h3>
-  <p>Register below:</p>
+<% content_for :right_side do %>
+<div class="card wow fadeInRight" data-wow-delay="0.3s">
+    <div class="card-body">
+        <!--Header-->
+        <div class="text-center">
+            <h3 class="white-text"><i class="fa fa-user white-text"></i> Register:</h3>
+            <hr>
+        </div>
+        <%= render "styled_form" %>
+      </div>
+  </div>
+<% end %>
 
- <%= render "form" %>
-</div>

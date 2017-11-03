@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    # binding.pry
     #find current user and assign them to recipe
     @recipe.user = current_user
     if @recipe.save
