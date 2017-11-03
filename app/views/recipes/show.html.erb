@@ -1,4 +1,4 @@
-<div>
+<div class="recipe-show container">
   <h1><%= @recipe.category.name %></h1>
   <h2><%= @recipe.name %></h2>
   <h2>Submitted by: <%= @recipe.user.username %></h2>
@@ -15,5 +15,5 @@
   <% if logged_in? && current_user == @recipe.user %>
     <p><%= link_to "Edit this recipe", edit_recipe_path(@recipe.id) %></p>
   <% end %>
-  <p><%= link_to "All recipes", recipes_path %></p>
+  <!-- <p><#%= link_to "All recipes", recipes_path %></p> -->
 </div>

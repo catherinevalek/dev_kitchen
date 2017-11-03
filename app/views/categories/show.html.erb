@@ -1,4 +1,4 @@
-<div class="category-container container">
+<div class="container">
 
     <h1><%= "Choose a " + @category.name %></h1>
      <ul>
@@ -6,5 +6,4 @@
           <li><%= link_to recipe.name, recipe_path %></li>
         <% end %>
     <ul>
-    <%= link_to 'Back', categories_path %>
 </div>
