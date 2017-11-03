@@ -2,15 +2,16 @@ class User < ApplicationRecord
   has_many :recipes
 
   validates_confirmation_of :password
-  validates :username, :email, :pw_hash, presence: true
+  validates :username, :email, presence: true
   validates :email, :username, uniqueness: true
-
+  validate :validate_password
 
   def password
     @password ||= BCrypt::Password.new(pw_hash)
   end
 
   def password=(new_password)
+    @raw_password = new_password
     @password = BCrypt::Password.create(new_password)
     self.pw_hash = @password
   end
@@ -24,4 +25,13 @@ class User < ApplicationRecord
     end
   end
 
+  def validate_password
+    if @raw_password.nil?
+      errors.add(:password, "is required")
+    elsif @raw_password.length < 4
+      errors.add(:password, "muser be greater than 3 characters")
+    end
+  end
+
 end
+
