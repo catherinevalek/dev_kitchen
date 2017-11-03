@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  get '/searches', to: 'recipes#index'
   get  '/signup',  to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :recipes
   resources :categories
   resources :menus
+  root to: 'pages#home'
 end
