@@ -6,6 +6,9 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"
+      rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 
   </head>
 
@@ -54,9 +57,9 @@
                             <div class="white-text">
                                 <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">Share Your Favorite Recipes </h1>
                                 <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-                                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae, quisquam iste, maiores. Nulla.</h6>
+                                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">"Bring me your best recipe, I’ll give you 10% of the profits per dish sold, and give the person you wish credit for the meal.”</h6>
                                 <br>
-                                <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
+                                <%# <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Learn more</a> %>
                             </div>
                         </div>
                         
@@ -67,7 +70,7 @@
                                     <!--Header-->
                                     <div class="text-center">
                                         <h3 class="white-text"><i class="fa fa-user white-text"></i> Register:</h3>
-                                        <hr class="hr-light">
+                                        <hr>
                                     </div>
 
                                     <!--Body-->
@@ -110,37 +113,18 @@
     </section>
 
 </header>
-<!--Main Navigation-->
 
-<!--Main Layout-->
-<%# <main>
-
-    <div class="container">
-        
-        <!--Grid row-->
-        <div class="row py-5">
-
-            <!--Grid column-->
-            <div class="col-md-12 text-center">
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-    </div>
-
-</main> %>
-<!--Main Layout-->
 
     <% flash.each do |message_type, message| %>
       <div><%= message %></div>
     <% end %>
 
     <%= yield %>
+
+
+    <script type= "text/javascript"> 
+        new WOW().init(); 
+    </script>
   </body>
 </html>
 
