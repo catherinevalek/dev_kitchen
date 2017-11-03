@@ -1,0 +1,8 @@
+<h1>Edit profile</h1>
+
+<%= render "form" %>
+
+<% if @user == current_user %>
+  <p>Remove your account? <%= link_to "Delete", @user, method: :delete,
+                                data: { confirm: "Are you sure?" } %></p>
+<% end %>
