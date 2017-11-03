@@ -1,0 +1,33 @@
+<%= form_for @menu, url: { action: "create" } do |f| %>
+
+  <div>
+    <%= f.label :appetizer_id, "Appetizer" %>
+    <%= f.collection_select(:appetizer_id, Menu.appetizers, :id, :name, include_blank: true) %>
+  </div>
+
+  <div>
+    <%= f.label :salad_id, "Salad" %>
+    <%= f.collection_select(:salad_id, Menu.salads, :id, :name, include_blank: true) %>
+  </div>
+
+  <div>
+    <%= f.label :main_course_id, "Main Course" %>
+    <%= f.collection_select(:main_course_id, Menu.main_courses, :id, :name, include_blank: true) %>
+  </div>
+
+  <div>
+    <%= f.label :dessert_id, "Dessert" %>
+    <%= f.collection_select(:dessert_id, Menu.desserts, :id, :name, include_blank: true) %>
+  </div>
+
+  <div>
+    <%= f.label :date, "Date" %>
+    <%= date_select :menu, :date %>
+  </div>
+
+  <div>
+    <%= f.submit yield(:button_text) %>
+  </div>
+
+
+<% end %>

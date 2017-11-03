@@ -3,6 +3,12 @@ class Recipe < ApplicationRecord
   belongs_to :user
 
   validates :name, :difficulty, :prep_time, :ingredients, :directions, presence: true
+
+  scope :is_appetizer, -> { where(category_id: 1) }
+  scope :is_salad, -> { where(category_id: 2) }
+  scope :is_main_course, -> { where(category_id: 3) }
+  scope :is_dessert, -> { where(category_id: 4) }
+
   def parse_ingredients
     ingredients.split(',')
   end

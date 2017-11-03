@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @category_info = Category.all.collect { |c| [c.name, c.id] }
   end
 
   def create

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appetizer: 1
+  salad: 1
+  main_dish: 1
+  dessert: 1
+
+two:
+  appetizer: 1
+  salad: 1
+  main_dish: 1
+  dessert: 1
