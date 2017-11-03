@@ -22,10 +22,11 @@ ActiveRecord::Schema.define(version: 20171103131814) do
   end
 
   create_table "menus", force: :cascade do |t|
-    t.integer "appetizer", null: false
-    t.integer "salad", null: false
-    t.integer "main_dish", null: false
-    t.integer "dessert", null: false
+    t.integer "appetizer_id", null: false
+    t.integer "salad_id", null: false
+    t.integer "main_course_id", null: false
+    t.integer "dessert_id", null: false
+    t.date "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

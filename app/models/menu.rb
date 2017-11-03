@@ -1,11 +1,27 @@
 class Menu < ApplicationRecord
 
-  validates :appetizer, :salad, :main_course, :dessert, presence: true
-  has_one :appetizer, foreign_key: :appetizer_id, class_name: "Recipe"
-  has_one :salad, foreign_key: :salad_id, class_name: "Recipe"
-  has_one :main_course, foreign_key: :main_course_id, class_name: "Recipe"
-  has_one :dessert, foreign_key: :dessert_id, class_name: "Recipe"
+  validates :appetizer_id, :salad_id, :main_course_id, :dessert_id, presence: true
+  # has_one :appetizer, class_name: "Recipe"
+  # has_one :salad, class_name: "Recipe"
+  # has_one :main_course, class_name: "Recipe"
+  # has_one :dessert, class_name: "Recipe"
   # menu.appetizer = Recipe.find(params[:appetizer_id])
+
+  def appetizer
+    Recipe.find(self.appetizer_id)
+  end
+
+  def salad
+    Recipe.find(self.salad_id)
+  end
+
+  def main_course
+    Recipe.find(self.main_course_id)
+  end
+
+  def dessert
+    Recipe.find(self.dessert_id)
+  end
 
   def self.appetizers
     Recipe.is_appetizer
@@ -22,4 +38,7 @@ class Menu < ApplicationRecord
   def self.desserts
     Recipe.is_dessert
   end
+
+
+
 end
