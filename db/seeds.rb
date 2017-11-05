@@ -1,4 +1,4 @@
-user_array = 10.times.collect do User.create!(username: Faker::HarryPotter.character.unique, email: Faker::Internet.safe_email, password: "pass")
+user_array = 10.times.collect do User.create!(username: Faker::HarryPotter.unique.character, email: Faker::Internet.safe_email, password: "pass")
 end
 category_array = [Category.create!( name: "Appetizer" ), Category.create!( name: "Salad" ), Category.create!( name: "Main Course" ), Category.create!( name: "Dessert" )]
 
