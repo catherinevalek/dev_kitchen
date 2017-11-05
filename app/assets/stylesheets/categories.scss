@@ -46,7 +46,8 @@ hr {
     background-color: #3f51b5 !important;
 }
 .navbar:not(.top-nav-collapse) {
-    background: transparent !important;
+    // background: transparent !important; //
+    background: black;
 }
 @media (max-width: 768px) {
     .navbar:not(.top-nav-collapse) {

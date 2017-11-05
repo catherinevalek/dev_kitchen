@@ -5,7 +5,7 @@
     <% end %>
     <ul id="recipes-list">
     <% @recipes.each do |recipe| %>
-      <li><%= link_to recipe.name, recipe %></li>
+      <li class="recipe-list"><%= link_to recipe.name, recipe, :class => "dk-link"%></li>
     <% end %>
     </ul>
     <p><%= link_to "Submit a recipe", new_recipe_path %></p>

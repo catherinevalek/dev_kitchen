@@ -11,33 +11,32 @@
                     <li class="nav-item active">
                         <%= link_to "Menu", categories_path, :class=>"nav-link" %>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
 
                         <%= link_to "Share a recipe", new_recipe_path, :class=>"nav-link"%>
                     </li>
                     <% if logged_in? %>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                         <%= link_to current_user.username, current_user, :class=>"nav-link" %>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                         <%= link_to "Settings", edit_user_path(current_user), :class=>"nav-link"  %>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                         <%= link_to "Log out", logout_path, method: :delete, :class=>"nav-link"  %>
                       </li>
                         <% else %>
-                      <li class="nav-item">
-                        <%= link_to "Log in", login_path, :class=>"nav-link"   %>
+                      <li class="nav-item active">
+                        <%= link_to "Register", signup_path, :class=>"nav-link"   %>
                       </li>
+                      <li class="nav-item active">
+                        <%= link_to "Log in", login_path, :class=>"nav-link"   %>
+                      </li>                      
                         <% end %>
-
                 </ul>
-                <form class="form-inline">
-
                     <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
                       <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", :class=>"form-control mr-sm-2" %>
                     <% end %>
-                </form>
             </div>
         </div>
     </nav>
