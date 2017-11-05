@@ -1,6 +1,13 @@
 body {
-    background-color: green;
+    background: url('https://static.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg');
+    background-size: cover;
      padding-top: 65px; 
+     color: white;
+}
+
+section {
+    position: relative; 
+    top: -35px;
 }
 
 .category-container {
@@ -61,7 +68,7 @@ hr {
 
 .intro-2 {
     //background: url("https://static01.nyt.com/images/2015/09/21/multimedia/clark-roast-chicken/clark-roast-chicken-superJumbo.jpg")no-repeat center center;//
-    background-color: green;
+    //background-color: green;//
      // background-size: cover; //
 
 }
