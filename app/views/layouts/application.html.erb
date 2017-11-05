@@ -19,14 +19,30 @@
 
     <!--Main Navigation-->
     <%= render "layouts/header" %>
+
   </header>
     <!--Intro Section-->
+
     <body>
+    <div class= "container">
+        <% if flash[:notice] %>
+
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:danger] %>
+      <div class="alert alert-danger">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+  </div>
     <%= render "layouts/section" %>
 
-    <% flash.each do |message_type, message| %>
-      <div><%= message %></div>
-    <% end %>
+<!--     <#% flash.each do |message_type, message| %>
+      <div><#%= message %></div>
+    <#% end %> -->
 
     <%= yield %>
 
