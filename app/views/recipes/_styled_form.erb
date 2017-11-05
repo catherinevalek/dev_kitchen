@@ -17,26 +17,26 @@
     <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   </div>
   <div class="md-form">
-    <%= f.label :name, "Name", :class => "active" %>
     <%= f.text_field :name, :id => "form3", :class => "form-control"  %>
+    <%= f.label :name, "Name", :class => "active" %>
   </div>
   <div class="md-form">
-    <%= f.label :difficulty, "Difficulty", :class => "active"  %>
     <%= f.number_field :difficulty, min: 0, max: 5, :id => "form3", :class => "form-control"  %>
+    <%= f.label :difficulty, "Difficulty (1-5)", :class => "active"  %>
   </div>
   <div class="md-form">
-    <%= f.label :prep_time, "Prep time in minutes", :class => "active"  %>
     <%= f.number_field :prep_time, min: 0, max: 300, :id => "form3", :class => "form-control"  %>
+    <%= f.label :prep_time, "Prep time in minutes", :class => "active"  %>
   </div>
   <div class="md-form">
-    <%= f.label :ingredients, "Ingredients", :class => "active"  %>
     <%= f.text_area :ingredients, :id => "form3", :class => "form-control"  %>
+    <%= f.label :ingredients, "Ingredients", :class => "active"  %>
   </div>
   <div class="md-form">
-    <%= f.label :directions, "Directions", :class => "active"  %>
     <%= f.text_area :directions, :id => "form3", :class => "form-control"  %>
+    <%= f.label :directions, "Directions", :class => "active"  %>
   </div>
   <div>
-    <%= f.submit yield(:button_text) %>
+    <%= f.submit yield(:button_text), :class =>"btn btn-indigo"  %>
   </div>
 <% end %>
