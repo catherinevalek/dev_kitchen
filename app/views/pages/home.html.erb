@@ -1,1 +1,41 @@
-This is the homepage
+
+
+
+<% content_for :left_side do %>
+                        <!-- <div class="col-md-6 text-center text-md-left mb-5"> -->
+  <div class="white-text">
+    <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s"> Your Recipes On Our Menu </h1>
+    <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+    <h6 class="wow fadeInLeft" data-wow-delay="0.3s">"Bring me your best recipe, I’ll give you 10% of the profits per dish sold, and give the person you wish credit for the meal.”    </h6><br>
+        <%= render "/menus/menu_list", :menu => @menu %>
+    </div>  
+<% end %>
+
+<% content_for :right_side do %>
+	<% if logged_in? %>
+	  <div class="card wow fadeInRight" data-wow-delay="0.3s">
+	    <div class="card-body">
+	        <!--Header-->
+	        <div class="text-center">
+	            <h3 class="white-text"><i class="fa fa-user white-text"></i> Submit a Recipe:</h3>
+	            <hr>
+	        </div>
+	        <% provide(:button_text, 'Submit') %>
+	        <%= render "/recipes/styled_form", :recipe => @recipe %>
+	      </div>
+	  </div>
+	<% else %>
+	  <div class="card wow fadeInRight" data-wow-delay="0.3s">
+	    <div class="card-body">
+	        <!--Header-->
+	        <div class="text-center">
+	            <h3 class="white-text"><i class="fa fa-user white-text"></i> Register:</h3>
+	            <hr>
+	        </div>
+	        <% provide(:button_text, 'Submit') %>
+	        <%= render "/users/styled_form", :recipe => @recipe %>
+	      </div>
+	  </div>
+	<% end%>
+
+<% end %>

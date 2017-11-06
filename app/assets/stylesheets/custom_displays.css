@@ -1,4 +1,4 @@
-
+/*
 .container {
   margin: 20px auto;
   width: 700px;
@@ -7,9 +7,26 @@
 }
 
 #all-recipes-title {
-  color: black;
+  color: white;
 }
 
 #recipes-list {
-    list-style-type: square;
+  list-style-type: square;
 }
+
+.navbar .nav > li > a {
+  color: white;
+}
+
+.dk-link {
+
+}
+
+
+li.recipe-list {
+   list-style:square;
+}
+
+#menu {
+	color: white;
+}*/

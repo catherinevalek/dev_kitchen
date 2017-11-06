@@ -39,6 +39,8 @@ class Menu < ApplicationRecord
     Recipe.is_dessert
   end
 
-
+  def self.menu_today
+    Menu.where("date >= ?", Time.now)
+  end
 
 end
