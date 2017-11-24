@@ -1,5 +1,4 @@
-Rails.application.routes.draw do
-  root to: 'pages#home'
+Rails.application.routes.draw do  
   get  '/signup',  to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -8,4 +7,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :recipes
   resources :categories
+  resources :menus
+  root to: 'pages#home'
 end

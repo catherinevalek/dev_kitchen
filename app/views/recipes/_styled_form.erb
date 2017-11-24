@@ -1,0 +1,42 @@
+<%= form_for @recipe do |f| %>
+  <!-- <#%= render 'shared/error_messages' %> -->
+    <% if @recipe.errors.any? %>
+      <div class="#">
+        <h4>
+          <%=pluralize(@recipe.errors.count, "error") %> prohibited you from submitting:
+        </h4>
+        <ul>
+          <% @recipe.errors.full_messages.each do |msg| %>
+            <li><%= msg  %></li>
+          <% end %>
+        </ul>
+      </div>
+   <% end %>
+  <div class="md-form">
+    <%= f.label :category %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+  </div>
+  <div class="md-form">
+    <%= f.text_field :name, :id => "form3", :class => "form-control"  %>
+    <%= f.label :name, "Name", :class => "active" %>
+  </div>
+  <div class="md-form">
+    <%= f.number_field :difficulty, min: 0, max: 5, :id => "form3", :class => "form-control"  %>
+    <%= f.label :difficulty, "Difficulty (1-5)", :class => "active"  %>
+  </div>
+  <div class="md-form">
+    <%= f.number_field :prep_time, min: 0, max: 300, :id => "form3", :class => "form-control"  %>
+    <%= f.label :prep_time, "Prep time in minutes", :class => "active"  %>
+  </div>
+  <div class="md-form">
+    <%= f.text_area :ingredients, :id => "form3", :class => "form-control"  %>
+    <%= f.label :ingredients, "Ingredients", :class => "active"  %>
+  </div>
+  <div class="md-form">
+    <%= f.text_area :directions, :id => "form3", :class => "form-control"  %>
+    <%= f.label :directions, "Directions", :class => "active"  %>
+  </div>
+  <div>
+    <%= f.submit yield(:button_text), :class =>"btn btn-indigo"  %>
+  </div>
+<% end %>

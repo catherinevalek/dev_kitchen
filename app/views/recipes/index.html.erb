@@ -1,11 +1,11 @@
-<div>
-  <h1>All Recipes</h1>
+<div class="container">
+  <h1>Recipes</h1>
     <% if @recipes.blank? %>
     <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
     <% end %>
     <ul>
     <% @recipes.each do |recipe| %>
-      <li><%= link_to recipe.name, recipe %></li>
+      <li><%= link_to recipe.name, recipe%></li>
     <% end %>
     </ul>
     <p><%= link_to "Submit a recipe", new_recipe_path %></p>

@@ -1,11 +1,25 @@
-<% provide(:button_text, 'Update') %>
-<h1>Edit recipe</h1>
-
-<%= render "form" %>
-
-<!-- <#% if @recipe.user == current_user %> -->
-  <p>Delete this recipe? <%= link_to "Delete", @recipe, method: :delete,
+<% content_for :right_side do %>
+<div class="card">
+    <div class="card-body">
+        <!--Header-->
+        <div class="text-center">
+            <h3 class="white-text"><i class="fa fa-user white-text"></i> Edit this recipe:</h3>
+            <hr>
+        </div>
+        <% provide(:button_text, 'Update') %>
+        <%= render "styled_form" %>
+        <p>Delete this recipe? <%= link_to "Delete", @recipe, method: :delete,
                                 data: { confirm: "Are you sure?" } %></p>
+      </div>
+  </div>
+<% end %>
 
-<!-- <#% end %> -->
-  <p><%= link_to "Back to recipe", @recipe %></p>
+<% content_for :left_side do %>
+    <div class="white-text">
+        <h1>Your Recipes On Our Menu</h1>
+        <hr>
+        <h6>"Bring me your best recipe, I’ll give you 10% of the profits per dish sold, and give the person you wish credit for the meal.”</h6>
+        <br>
+    </div>
+
+<% end %>

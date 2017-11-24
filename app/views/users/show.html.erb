@@ -1,3 +1,12 @@
-<div class="#">
-  <h3><%=@user.username.capitalize%>'s Profile</h3>
+<div class="container">
+  <h1><%=@user.username.capitalize%>'s Profile</h1>   <p>
+	<%= link_to "Edit profile", edit_user_path(current_user)%>
+  </p>
+  <h2>Your recipes: </h2>
+  <ul>
+  <% @user.recipes.each do |recipe| %></p>
+    <li><%= link_to recipe.name, recipe %></li>
+  <% end %>
+  </ul>
+
 </div>

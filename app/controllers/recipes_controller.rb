@@ -1,4 +1,8 @@
 class RecipesController < ApplicationController
+
+  before_action :logged_in_user, only: [:new, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   def index
     @recipes = Recipe.all
    # binding.pry
@@ -14,13 +18,13 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @category_info = Category.all.collect { |c| [c.name, c.id] }
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
-    #need to find current user and assign them to recipe
-    @recipe.user_id = 1
+    # binding.pry
+    #find current user and assign them to recipe
+    @recipe.user = current_user
     if @recipe.save
       flash[:success] = "Your recipe has been added!"
       redirect_to @recipe
@@ -57,5 +61,18 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:category_id, :name, :difficulty, :prep_time, :ingredients, :directions)
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in to post a recipe."
+      redirect_to login_path
+    end
+  end
+
+  def correct_user
+    @recipe = Recipe.find(params[:id])
+    @user = current_user
+    redirect_to root_path unless @user == @recipe.user
   end
 end
