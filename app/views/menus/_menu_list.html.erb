@@ -1,3 +1,4 @@
+<% if @menu %>
 <div class="wow fadeInLeft white-text" id="menu" data-wow-delay="0.3s">
   <h2 id="menu">Today's Menu</h2>
   <p>Appetizer: <%= @menu.appetizer.name%></p>
@@ -5,5 +6,5 @@
   <p>Main Course: <%= @menu.main_course.name%></p>
   <p>Dessert: <%= @menu.dessert.name %></p>
 </div>
-
+<% end %>
 
