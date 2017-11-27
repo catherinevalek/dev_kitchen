@@ -1,10 +1,11 @@
 <% if @menu %>
-<div class="wow fadeInLeft white-text" id="menu" data-wow-delay="0.3s">
-  <h2 id="menu">Today's Menu</h2>
-  <p>Appetizer: <%= @menu.appetizer.name%></p>
-  <p>Salad: <%= @menu.salad.name%></p>
-  <p>Main Course: <%= @menu.main_course.name%></p>
-  <p>Dessert: <%= @menu.dessert.name %></p>
+<div class=" card wow fadeInLeft white-text center-text" id="menu" data-wow-delay="0.3s">
+<div class="card-body">
+  <h2 id="menu card-title">Today's Menu</h2>
+  <p class="card-text">Appetizer: <%= @menu.appetizer.name%></p>
+  <p class="card-text">Salad: <%= @menu.salad.name%></p>
+  <p class="card-text">Main Course: <%= @menu.main_course.name%></p>
+  <p class="card-text">Dessert: <%= @menu.dessert.name %></p>
+</div>
 </div>
 <% end %>
-
