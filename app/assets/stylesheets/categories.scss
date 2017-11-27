@@ -1,3 +1,6 @@
+html {
+  font-family: 
+}
 body {
     // background: url('https://static.pexels.com/photos/235985/pexels-photo-235985.jpeg');
     // background-size: cover;
@@ -6,11 +9,16 @@ body {
 }
 
 #main-image {
-    background: url('https://static.pexels.com/photos/172276/pexels-photo-172276.jpeg');
+    background: url('https://static.pexels.com/photos/396166/pexels-photo-396166.jpeg');
     // background: url('https://static.pexels.com/photos/594060/pexels-photo-594060.jpeg');
     padding-bottom: 50px;
     background-size: cover;
-     color: white;
+     // color: white;
+    -webkit-filter: grayscale(40%);
+       -moz-filter: grayscale(40%);
+         -o-filter: grayscale(40%);
+        -ms-filter: grayscale(40%);
+            filter: grayscale(40%);
 }
 
 #about {
@@ -98,7 +106,8 @@ hr {
     background: linear-gradient(to 45deg, rgba(29, 236, 197, 0.4), rgba(96, 0, 136, 0.4) 100%);
 }
 .card {
-    background-color: rgba(229, 228, 255, 0.2);
+    // background-color: rgba(229, 228, 255, 0.2);
+    background-color: rgba(66, 137, 92, 0.41);
 }
 
  .md-form .prefix {
