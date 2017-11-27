@@ -1,5 +1,7 @@
-<div class="recipe-show container">
+<section class="text-white mb-0" id="about">
+<div class="container">
   <h1><%= @recipe.category.name %></h1>
+      <hr class="star-light mb-5">
   <h2><%= @recipe.name %></h2>
   <h2>Submitted by: <%= @recipe.user.username %></h2>
   <p>Difficulty level: <%= @recipe.difficulty %></p>
@@ -17,3 +19,5 @@
   <% end %>
   <!-- <p><#%= link_to "All recipes", recipes_path %></p> -->
 </div>
+</section>
+

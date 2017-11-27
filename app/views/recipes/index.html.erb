@@ -1,12 +1,22 @@
-<div class="container">
-  <h1>Recipes</h1>
+<section class="text-white mb-0" id="about">
+  <div class="container">
+    <h2 class="text-center text-uppercase text-white">Recipes</h2>
+    <hr class="star-light mb-5">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto text-center">
     <% if @recipes.blank? %>
     <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
     <% end %>
-    <ul>
+        <ul class="list-unstyled">
     <% @recipes.each do |recipe| %>
       <li><%= link_to recipe.name, recipe%></li>
     <% end %>
     </ul>
-    <p><%= link_to "Submit a recipe", new_recipe_path %></p>
+
+    <%= button_to "Submit a recipe", new_recipe_path, :id => "open-contacts-dialog-btn",
+      :class => "btn btn-xl btn-outline-light", :method => :get %>
+        <!-- <#%= link_to "Submit a menu", new_menu_path %> -->
+    </div>
+  </div>
 </div>
+</section>

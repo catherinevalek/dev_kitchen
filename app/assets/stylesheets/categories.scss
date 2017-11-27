@@ -1,21 +1,21 @@
-// body {
-//     // background: url('https://static.pexels.com/photos/235985/pexels-photo-235985.jpeg');
-//     // background-size: cover;
-//     background-color: black;
-// }
+body {
+    // background: url('https://static.pexels.com/photos/235985/pexels-photo-235985.jpeg');
+    // background-size: cover;
+
+    background-color: black;
+}
 
 #main-image {
-    background: url('https://static.pexels.com/photos/164005/pexels-photo-164005.jpeg');
+    background: url('https://static.pexels.com/photos/172276/pexels-photo-172276.jpeg');
     // background: url('https://static.pexels.com/photos/594060/pexels-photo-594060.jpeg');
+    padding-bottom: 50px;
     background-size: cover;
-     padding-top: 65px; 
-     padding-bottom: 65px;
      color: white;
 }
 
-section {
+#about {
     background-color: black;
-        padding: 6rem 0;
+    padding: 6rem 0;
 }
 
 .category-container {

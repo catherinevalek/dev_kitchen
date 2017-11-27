@@ -1,15 +1,20 @@
 
-
-
-<div class="container">
-  <h1>All Menus</h1>
-    <% if @menus.blank? %>
-    <h4>There are no menus.</h4>
-    <% end %>
-    <ul>
-    <% @menus.each do |menu| %>
-      <li><%= link_to menu.date, menu %></li>
-    <% end %>
-    </ul>
-    <p><%= link_to "Submit a menu", new_menu_path %></p>
+<section class="text-white mb-0" id="about">
+  <div class="container">
+    <h2 class="text-center text-uppercase text-white">All Menus</h2>
+    <hr class="star-light mb-5">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto text-center">
+        <% if @menus.blank? %>
+        <h4>There are no menus.</h4>
+        <% end %>
+        <ul class="list-unstyled">
+            <% @menus.each do |menu| %>
+            <li><%= link_to menu.date, menu%></li>
+            <% end %>
+        </ul>
+        <!-- <#%= link_to "Submit a menu", new_menu_path %> -->
+    </div>
+  </div>
 </div>
+</section>
