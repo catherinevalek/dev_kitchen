@@ -1,12 +1,9 @@
-
-
-
 <% content_for :left_side do %>
                         <!-- <div class="col-md-6 text-center text-md-left mb-5"> -->
   <div class="white-text">
     <h1 class="h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s"> Your Recipes On Our Menu </h1>
     <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-    <h6 class="wow fadeInLeft" data-wow-delay="0.3s">"Bring me your best recipe, I’ll give you 10% of the profits per dish sold, and give the person you wish credit for the meal.”    </h6><br>
+    <h6 class="wow fadeInLeft" data-wow-delay="0.3s">Send us your best recipe, and we'll give you 10% of the profits per dish sold if your recipe is featured on our menu!    </h6><br>
         <%= render "/menus/menu_list", :menu => @menu %>
     </div>  
 <% end %>
@@ -39,3 +36,81 @@
 	<% end%>
 
 <% end %>
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+           <div class="col-lg-3 col-md-3 col-sm-3">
+                     <%= link_to recipes_path, :class => "portfolio-box" do %>
+           <%= image_tag "https://static.pexels.com/photos/539451/pexels-photo-539451.jpeg", :class => "img-fluid" %>
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    View
+                  </div>
+                  <div class="project-name">
+                    Appetizers
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+           <div class="col-lg-3 col-md-3 col-sm-3">
+                     <%= link_to recipes_path, :class => "portfolio-box" do %>
+           <%= image_tag "https://static.pexels.com/photos/5916/food-salad-healthy-colorful.jpg", :class => "img-fluid" %>
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    View
+                  </div>
+                  <div class="project-name">
+                    Salads
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3">
+          <%= link_to recipes_path, :class => "portfolio-box" do %>
+           <%= image_tag "https://static.pexels.com/photos/660282/pexels-photo-660282.jpeg", :class => "img-fluid" %>
+                  <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    View
+                  </div>
+                  <div class="project-name">
+                    Main Courses
+                  </div>
+                </div>
+              </div>
+           <% end %>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3">
+            <%= link_to recipes_path, :class => "portfolio-box" do %>
+           <%= image_tag "https://static.pexels.com/photos/14107/pexels-photo-14107.jpeg", :class => "img-fluid" %>
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    View
+                  </div>
+                  <div class="project-name">
+                    Desserts
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section class="text-white mb-0" id="about">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-white">About</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto text-center">
+            <p class="lead">Welcome to Dev Kitchen! We're a restaurant that crowdsources our menus from you. The authors of the recipes featured on the Dev Kitchen menu will be give a portion of our proceeds.</p>
+          </div>
+        </div>
+      </div>
+    </section>

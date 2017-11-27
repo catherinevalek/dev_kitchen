@@ -29,7 +29,7 @@ class User < ApplicationRecord
     if @raw_password.nil?
       errors.add(:password, "is required")
     elsif @raw_password.length < 4
-      errors.add(:password, "muser be greater than 3 characters")
+      errors.add(:password, "must be greater than 3 characters")
     end
   end
 

@@ -1,5 +1,7 @@
-<div class="recipe-show container">
+<section class="text-white mb-0" id="about">
+<div class="container">
   <h2>Menu for <%= @menu.date %></h2>
+      <hr class="star-light mb-5">
   <p>Appetizer: <%= @menu.appetizer.name%></p>
   <p>Salad: <%= @menu.salad.name%></p>
   <p>Main Course: <%= @menu.main_course.name%></p>
@@ -7,5 +9,5 @@
   <!-- <p><%#= link_to "Edit this menu", edit_menu_path(@menu.id) %></p> -->
   <p><%= link_to "All menus", menus_path %></p>
 </div>
-
+</section>
 
